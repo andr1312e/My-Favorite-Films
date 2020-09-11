@@ -8,6 +8,9 @@ namespace GoodFilms.Data.Models
 {
     public class Film
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int Id { set; get; }
         public string Title { set; get; }
 
