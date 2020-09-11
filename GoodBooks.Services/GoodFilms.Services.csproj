@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\GoodBooks.Data\GoodFilms.Data.csproj" />
   </ItemGroup>
 
 </Project>
