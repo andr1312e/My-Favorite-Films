@@ -1,6 +1,6 @@
 
 # SPA App
-### You can download it from last relize
+### You can download it from last reliase
 
 ### Installation
 
