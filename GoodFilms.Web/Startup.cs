@@ -27,7 +27,13 @@ namespace GoodFilms.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
             services.AddControllers();
             services.AddDbContext<FilmsDbContext>(options => { options.EnableDetailedErrors(); options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
             services.AddScoped<IFilmService, FilmService>();
@@ -41,16 +47,9 @@ namespace GoodFilms.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors(opts =>
-            {
-                opts.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .WithOrigins("https://localhost:8080")
-                .AllowCredentials();
-            });
+            app.UseCors("CorsPolicy");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
