@@ -1,5 +1,5 @@
 <template>
-    <div class="film-wrapper">
+    <div @click="findFilm(film.id)"  class="film-wrapper">
         <div class="film-title">
          {{film.title}}           
         </div>
@@ -7,6 +7,7 @@
          {{film.producer}}           
         </div>
         <div class="film-updatedOn">
+            Дата съемки: 
           {{film.updatedOn | humanize-filter}}          
         </div>
         <div @click="deleteFilm(film.id)" class="delete">
@@ -34,6 +35,20 @@ export default class Film extends Vue {
         await filmService.deleteFilmById(id);
         this.$emit('deleted', id)
     }
+
+    async getFilm(id: number)
+    {
+        Vue.component('film',{props: id});
+        console.log("Get Film", id);
+        
+    }
+    async findFilm(id: number)
+    {
+        const str='/currentFilm/:'+id;
+        this.$router.push(str);        
+    }
+
+
 }
 </script>
 

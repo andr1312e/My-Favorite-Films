@@ -1,14 +1,16 @@
 <template>
-  <div class="film-container">
+  <div class="film-container" >
     <h1>My films</h1>
-    <div v-if="myFilms.length">
+    <div v-if="myFilms.length" >
       <film
+      
       @deleted="getAllFilms"
       :film="film" 
-      v-for="film in myFilms" v-bind:key="film.Id" 
+      v-for="film in myFilms" v-bind:key="film.id" 
+      @getById="getCurrentFilm" 
+     
       >{{film.title}}
       </film>
-
       </div>
   </div>
 </template>
@@ -35,7 +37,6 @@ export default class MyFilms extends Vue{
       }
       getAllFilms(){
         filmService.getAllFilms().then(res=>this.myFilms=res).catch(err=>console.error(err));
-        console.log(filmService.getAllFilms())
       }
       created(){
         this.getAllFilms();

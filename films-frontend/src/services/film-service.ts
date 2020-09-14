@@ -17,4 +17,10 @@ export default class FilmService{
         const result = await axios.delete(`${this.API_URL}/films/${id}`)
         return result.data;
     }
+
+    public async getFilmById(id: number)
+    {
+        const result= await axios.get(`${this.API_URL}/films/${id}`)
+        return result.data;
+    }
 }

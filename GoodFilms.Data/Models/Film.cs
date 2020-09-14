@@ -16,5 +16,7 @@ namespace GoodFilms.Data.Models
         public DateTime UpdatedOn { set; get; }
         public string Title { set; get; }
         public string Producer { set; get; }
+        public string PathToCover { set; get; }
+        //public string IEnumerable<FilmReview> Review{ set;get; }
     }
 }

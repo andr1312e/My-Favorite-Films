@@ -51,7 +51,7 @@ namespace GoodFilms.Web
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseAuthorization();
-
+            app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

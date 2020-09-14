@@ -53,9 +53,6 @@ const filmService= new FilmService();
 </script>
 
 <style lang="scss">
-    .add-film-wrapper{
-
-    }
     .new-film{
         list-style-type: none;
         list-style: none;
