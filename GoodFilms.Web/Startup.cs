@@ -37,6 +37,7 @@ namespace GoodFilms.Web
             services.AddControllers();
             services.AddDbContext<FilmsDbContext>(options => { options.EnableDetailedErrors(); options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
             services.AddScoped<IFilmService, FilmService>();
+            services.AddScoped<IFilmReviewService, FilmReviewService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

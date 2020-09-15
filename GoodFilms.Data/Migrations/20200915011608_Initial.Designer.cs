@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GoodFilms.Data.Migrations
 {
     [DbContext(typeof(FilmsDbContext))]
-    [Migration("20200911123049_Initial")]
+    [Migration("20200915011608_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,9 @@ namespace GoodFilms.Data.Migrations
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("PathToCover")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Producer")
                         .HasColumnType("nvarchar(max)");

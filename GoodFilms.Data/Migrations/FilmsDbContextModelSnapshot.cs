@@ -29,7 +29,7 @@ namespace GoodFilms.Data.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PathTocCover")
+                    b.Property<string>("PathToCover")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Producer")

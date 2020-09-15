@@ -16,7 +16,8 @@ namespace GoodFilms.Data.Migrations
                     Created = table.Column<DateTime>(nullable: false),
                     UpdatedOn = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: true),
-                    Producer = table.Column<string>(nullable: true)
+                    Producer = table.Column<string>(nullable: true),
+                    PathToCover = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
