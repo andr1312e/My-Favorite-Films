@@ -38,6 +38,7 @@ export default class Film extends Vue {
 
     async getFilm(id: number)
     {
+        console.log("Get Film method")
         Vue.component('film',{props: id});
         console.log("Get Film", id);
         

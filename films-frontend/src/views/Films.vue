@@ -3,12 +3,10 @@
     <h1>My films</h1>
     <div v-if="myFilms.length" >
       <film
-      
       @deleted="getAllFilms"
       :film="film" 
-      v-for="film in myFilms" v-bind:key="film.id" 
-      @getById="getCurrentFilm" 
-     
+      v-for="film in myFilms" 
+      v-bind:key="film.id" 
       >{{film.title}}
       </film>
       </div>
@@ -38,7 +36,8 @@ export default class MyFilms extends Vue{
       getAllFilms(){
         filmService.getAllFilms().then(res=>this.myFilms=res).catch(err=>console.error(err));
       }
-      created(){
+      created()
+      {
         this.getAllFilms();
       }
 }

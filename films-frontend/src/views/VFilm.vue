@@ -9,8 +9,11 @@
         </div>
         <div class="film-updatedOn">
           {{film.updatedOn | humanize-filter}}          
-        </div> 
-    </div >   
+        </div>
+        <Reviews
+        v-bind:FilmId="this.film.id"
+        ></Reviews> 
+    </div >  
     <div v-else>
          Выберите фильм пожалуйста на странице мои фильмы.       
     </div>
@@ -22,9 +25,11 @@ import IFilm from '@/types/Film';
 import  Vue from 'vue';
 import Component from 'vue-class-component';
 import FilmService from '@/services/film-service';
+import Reviews from '@/components/Reviews.vue'
 const filmService = new FilmService();
 @Component({
  name: 'Film',
+ components: {Reviews}
 })
 
 export default class ThisFilm extends Vue{
